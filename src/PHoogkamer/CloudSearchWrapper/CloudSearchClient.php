@@ -231,7 +231,7 @@ class CloudSearchClient
             'start'       => $query->getStart(),
             'size'        => $query->getSize(),
             'sort'        => $query->getSort(),
-            'queryOptions'=> $query->getQueryOptions()
+            'queryOptions'=> $query->getQueryOptions(),
         ];
 
         $facet = $query->getFacet();
@@ -247,6 +247,11 @@ class CloudSearchClient
         $cursor = $query->getCursor();
         if ( ! is_null($cursor)) {
             $arguments['cursor'] = $cursor;
+        }
+        
+        $return = $query->getReturn();
+        if ( ! is_null($return)) {
+            $arguments['return'] = $return;
         }
 
         $arguments = array_filter($arguments);
