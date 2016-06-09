@@ -52,6 +52,12 @@ abstract class CloudSearchQuery implements CloudSearchQueryInterface
      * @var array
      */
     private $queryOptions;
+    
+    
+    /**
+     * @var string
+     */
+    private $return = null;
 
     public abstract function getQueryParserType();
 
@@ -176,6 +182,16 @@ abstract class CloudSearchQuery implements CloudSearchQueryInterface
             return '';
         }
     }
+    
+    public function setReturn($return)
+    {
+        $this->return = $return;
+    }
+
+    public function getReturn()
+    {
+        return $this->return;
+    }
 
     /**
      * Get the query. Used by CloudSearchClient::search().
@@ -183,5 +199,8 @@ abstract class CloudSearchQuery implements CloudSearchQueryInterface
      * @return string
      */
     public abstract function getQuery();
+    
+    
+ 
 
 }
