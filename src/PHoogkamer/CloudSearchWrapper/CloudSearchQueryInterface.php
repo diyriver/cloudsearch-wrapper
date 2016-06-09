@@ -95,4 +95,15 @@ interface CloudSearchQueryInterface
      * @return void
      */
     public function setQueryOption($key, $value);
+    
+    /**
+     * @return string
+     */
+    public function getReturn();
+
+    /**
+     * @param string $return
+     * @return void
+     */
+    public function setReturn($return);
 }
