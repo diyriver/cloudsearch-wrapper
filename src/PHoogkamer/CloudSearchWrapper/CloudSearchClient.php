@@ -105,7 +105,7 @@ class CloudSearchClient
             $result = $this->convertResult($result, $resultDocument););
         }
         
-        $result = $this->convertResult($this->searchClient->search($arguments), $resultDocument);
+  
 
         return $result;
     }
