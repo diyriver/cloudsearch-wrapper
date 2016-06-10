@@ -93,7 +93,7 @@ class CloudSearchClient
     public function search(
         CloudSearchQueryInterface $query,
         CloudSearchStructuredQuery $filterQuery = null,
-        $resultDocument = '\PHoogkamer\CloudSearchWrapper\CloudSearchDocument'
+        $resultDocument = '\PHoogkamer\CloudSearchWrapper\CloudSearchDocument',
         $convert = false
     ) {
         $arguments = $this->prepareArguments($query, $filterQuery);
