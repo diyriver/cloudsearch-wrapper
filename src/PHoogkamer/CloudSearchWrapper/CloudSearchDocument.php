@@ -163,6 +163,9 @@ class CloudSearchDocument implements CloudSearchDocumentInterface
      */
     public function fillWithHit(array $hit)
     {
+        
+        if(!array_key_exists('fields',$hit)) return;
+        
         $this->id = $hit['id'];
 
         foreach ($hit['fields'] as $key => $field) {
