@@ -94,9 +94,17 @@ class CloudSearchClient
         CloudSearchQueryInterface $query,
         CloudSearchStructuredQuery $filterQuery = null,
         $resultDocument = '\PHoogkamer\CloudSearchWrapper\CloudSearchDocument'
+        $convert = false
     ) {
         $arguments = $this->prepareArguments($query, $filterQuery);
 
+        $result = $this->searchClient->search($arguments);
+        
+        if($convert)
+        {
+            $result = $this->convertResult($result, $resultDocument););
+        }
+        
         $result = $this->convertResult($this->searchClient->search($arguments), $resultDocument);
 
         return $result;
