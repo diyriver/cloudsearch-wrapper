@@ -286,7 +286,7 @@ class CloudSearchClient
         CloudSearchQueryInterface $query,
         CloudSearchStructuredQuery $filterQuery,
         $resultDocument = '\PHoogkamer\CloudSearchWrapper\CloudSearchDocument',
-        $cursor = 'initial';
+        $cursor = 'initial'
     ) {
         if ($cursor != 'initial') {
             $query->setCursor($cursor);
