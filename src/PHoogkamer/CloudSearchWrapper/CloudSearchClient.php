@@ -163,7 +163,7 @@ class CloudSearchClient
         $start        = $awsResult->getPath('hits/start');
         $cursor       = $awsResult->getPath('hits/cursor');
         $facets       = $awsResult->getPath('facets');
-        $metadata     = $awsResult->getPath('metadata'); 
+        $metadata     = $awsResult->get('@metadata'); 
 
         $result = new CloudSearchResult($amountOfHits, $start, $time, $facets, $cursor, $metadata);
 
