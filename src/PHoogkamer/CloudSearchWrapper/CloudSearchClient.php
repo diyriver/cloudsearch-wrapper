@@ -102,7 +102,7 @@ class CloudSearchClient
         
         if($convert)
         {
-            $result = $this->convertResult($result, $resultDocument););
+            $result = $this->convertResult($result, $resultDocument);
         }
         
   
