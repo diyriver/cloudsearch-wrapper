@@ -41,6 +41,12 @@ class CloudSearchResult
      * @var string
      */
     private $cursor;
+    
+    
+    /**
+     * @var array
+     */
+    private $metadata;
 
     /**
      * @param      $amountOfHits
@@ -49,13 +55,14 @@ class CloudSearchResult
      * @param      $facets
      * @param string $cursor
      */
-    public function __construct($amountOfHits, $start, $time, $facets, $cursor = null)
+    public function __construct($amountOfHits, $start, $time, $facets, $cursor = null, $metadata = [] )
     {
         $this->amountOfHits = $amountOfHits;
         $this->start        = $start;
         $this->time         = $time;
         $this->facets       = $facets;
         $this->cursor       = $cursor;
+        $this->metadata     = $metadata;
     }
 
     /**
@@ -88,6 +95,15 @@ class CloudSearchResult
     public function getTime()
     {
         return $this->time;
+    }
+    
+    
+      /**
+     * @return array
+     */
+    public function getMetadata()
+    {
+        return $this->metadata;
     }
 
     /**
