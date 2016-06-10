@@ -282,11 +282,11 @@ class CloudSearchClient
      * @param                            $cursor
      * @return CloudSearchResult
      */
-    private function searchWithCursor(
+    public function searchWithCursor(
         CloudSearchQueryInterface $query,
         CloudSearchStructuredQuery $filterQuery,
-        $resultDocument,
-        $cursor
+        $resultDocument = '\PHoogkamer\CloudSearchWrapper\CloudSearchDocument',
+        $cursor = 'initial';
     ) {
         if ($cursor != 'initial') {
             $query->setCursor($cursor);
