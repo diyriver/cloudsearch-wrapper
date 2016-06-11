@@ -152,6 +152,22 @@ class CloudSearchStructuredQuery extends CloudSearchQuery implements CloudSearch
 
         return $this;
     }
+    
+    
+      /**
+     * Add an NOT statement to the query. Pass a closure to set the fields (or other AND/OR/NOT statements) in it.
+     *
+     * @param callable $function
+     * @return $this
+     */
+    public function addNot(\Closure $function)
+    {
+        $this->query .= '(not ';
+        $function($this);
+        $this->query .= ')';
+        $this->query = str_replace('(not )', '', $this->query);
+        return $this;
+    }
 
     /**
      * Get the concatenated query. Used by CloudSearchClient::search().
