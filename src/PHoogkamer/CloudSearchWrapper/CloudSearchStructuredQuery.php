@@ -45,6 +45,23 @@ class CloudSearchStructuredQuery extends CloudSearchQuery implements CloudSearch
 
         $this->concatField($field);
     }
+    
+    
+       /**
+     * Add a field to query, add string value by setting $isString as true.
+     *
+     * @param      $key
+     * @param      $value
+     * @param bool $isString
+     */
+    public function addTerm($value, $isString = false)
+    {
+        if ($isString) {
+            $value = "'{$value}'";
+        }
+
+        $this->concatField($value);
+    }
 
     /**
      * Implementation of the range field. $isString for string ranges.
